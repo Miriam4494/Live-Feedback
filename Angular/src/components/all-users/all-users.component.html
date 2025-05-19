@@ -1,0 +1,25 @@
+<!-- 
+
+  <div class="all-users-container">
+    <h2 class="section-title">👥 All Registered Users</h2>
+  
+    <div class="users-list">
+      @for(user of users; track user){
+        <app-user-card [user]="user" (delete)="deleteUser(user)"></app-user-card>
+      }
+    </div>
+  </div>
+   -->
+   <div class="all-users-container">
+  <div class="header-section">
+    <h2 class="section-title">All Registered Users</h2>
+    <button  class="back-link" (click)="goToHome()">Back to Home</button>
+
+  </div>
+
+  <div class="users-list">
+    @for(user of users; track user){
+      <app-user-card [user]="user" (delete)="deleteUser(user)"></app-user-card>
+    }
+  </div>
+</div>

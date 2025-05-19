@@ -1,0 +1,25 @@
+
+   <div class="user-card">
+    <div class="user-details">
+      <h3 class="user-name">{{ user.userName }}</h3>
+      <div class="user-info">
+        <div class="info-row">
+          <span class="label">Email:</span>
+          <span class="value">{{ user.email }}</span>
+        </div>
+        <div class="info-row">
+          <span class="label">Points:</span>
+          <span class="value">{{ user.points }}</span>
+        </div>
+        <div class="info-row">
+          <span class="label">Role:</span>
+          <span class="value">{{ user.roleId==11? `Admin`:`User` }}</span>
+        </div>
+      </div>
+    </div>
+    <button class="delete-button" 
+            (click)="onDelete()" 
+            [disabled]="user.roleId == 11"
+            [ngClass]="{'disabled-button': user.roleId == 11}">Delete</button>
+    <!-- <button class="delete-button" (click)="onDelete()">Delete</button> -->
+  </div>

@@ -1,0 +1,87 @@
+<!-- 
+   <div class="card-container">
+    <h2 class="title">📊 System Statistics Overview</h2>
+  
+    <div class="charts-wrapper">
+      <div class="chart-box">
+        <ngx-charts-pie-chart
+          [view]="[300, 300]"
+          [results]="chartData"
+          [legend]="true"
+          [labels]="true"
+          [doughnut]="true"
+          [explodeSlices]="true"
+          [animations]="true"
+          [scheme]="customColorScheme">
+        </ngx-charts-pie-chart>
+      </div>
+  
+      <div class="chart-box">
+        <ngx-charts-bar-vertical
+          [view]="[400, 300]"
+          [results]="chartData"
+          [scheme]="customColorScheme"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="true"
+          [animations]="true">
+        </ngx-charts-bar-vertical>
+      </div>
+  
+      <div class="chart-box">
+        <ngx-charts-advanced-pie-chart
+          [results]="chartData"
+          [view]="[350, 300]"
+          [scheme]="customColorScheme"
+          [animations]="true">
+        </ngx-charts-advanced-pie-chart>
+      </div>
+    </div>
+  </div>
+   -->
+   <div class="card-container">
+    <div class="header-section">
+      <h2 class="title">System Statistics</h2>
+      <button  class="back-link" (click)="goToHome()">Back to Home</button>
+      
+    </div>
+  
+    <div class="charts-wrapper">
+      <div class="chart-box">
+        <h3 class="chart-title">User Distribution</h3>
+        <ngx-charts-pie-chart
+          [view]="[300, 300]"
+          [results]="chartData"
+          [legend]="true"
+          [labels]="true"
+          [doughnut]="true"
+          [explodeSlices]="false"
+          [animations]="true"
+          [scheme]="customColorScheme">
+        </ngx-charts-pie-chart>
+      </div>
+  
+      <div class="chart-box">
+        <h3 class="chart-title">User Metrics</h3>
+        <ngx-charts-bar-vertical
+          [view]="[400, 300]"
+          [results]="chartData"
+          [scheme]="customColorScheme"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="true"
+          [animations]="true">
+        </ngx-charts-bar-vertical>
+      </div>
+  
+      <div class="chart-box">
+        <h3 class="chart-title">Advanced Analytics</h3>
+        <ngx-charts-advanced-pie-chart
+          [results]="chartData"
+          [view]="[350, 300]"
+          [scheme]="customColorScheme"
+          [animations]="true">
+        </ngx-charts-advanced-pie-chart>
+      </div>
+    </div>
+  </div>

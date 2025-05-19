@@ -1,0 +1,36 @@
+
+   <div class="home-container">
+    <div class="overlay"></div>
+    
+    <div class="branding">
+      <h1 class="brand-name">LIVEFEEDBACK</h1>
+      <p class="brand-tagline">Professional User Management System</p>
+    </div>
+  
+    <div class="content-panel" [class.logged-in]="isLoggedIn">
+      @if (!isLoggedIn) {
+        <ng-container>
+          <h2 class="panel-title">Sign In</h2>
+          <div class="input-group">
+            <input type="email" placeholder="Email" [(ngModel)]="email" />
+          </div>
+          <div class="input-group">
+            <input type="password" placeholder="Password" [(ngModel)]="password" />
+          </div>
+          <button class="login-btn" (click)="login()">Login</button>
+          @if(errorMessage) {
+            <div class="error-message">{{ errorMessage }}</div> <!-- הודעת שגיאה -->
+          }
+
+        </ng-container>
+      }
+      @else {
+        <h2 class="panel-title">Dashboard</h2>
+        <div class="dashboard-actions">
+            <button   class="dashboard-btn" (click)="goToUsers()">View Users</button>
+            <button   class="dashboard-btn"(click)="goToStats()">View Stats</button>
+          <button class="logout-btn" (click)="logout()">Logout</button>
+        </div>
+      }
+    </div>
+  </div>

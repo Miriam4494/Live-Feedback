@@ -1,0 +1,189 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+  
+  .home-container {
+    position: relative;
+    height: 100vh;
+    background-image: url('/feedback.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .branding {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .brand-name {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .brand-tagline {
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 8px;
+    opacity: 0.9;
+  }
+  
+  .content-panel {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .content-panel.logged-in {
+    width: 320px;
+  }
+  
+  .panel-title {
+    font-size: 20px;
+    color: #333333;
+    margin: 0 0 8px;
+    font-weight: 500;
+  }
+  
+  .input-group {
+    margin-bottom: 8px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+  }
+  
+  input:focus {
+    border-color: #555555;
+    outline: none;
+  }
+  
+  .login-btn {
+    background-color: #333333;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+  }
+  
+  .login-btn:hover {
+    background-color: #000000;
+  }
+  
+  .dashboard-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .dashboard-btn {
+    display: block;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+    background-color: #f5f5f5;
+    color: #333333;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .dashboard-btn:hover {
+    background-color: #eeeeee;
+  }
+  
+  .logout-btn {
+    background-color: #ffffff;
+    color: #555555;
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #f5f5f5;
+  }
+  
+  @media (max-width: 768px) {
+    .content-panel {
+      width: 90%;
+      right: 50%;
+      transform: translateX(50%);
+      bottom: 20px;
+    }
+    
+    .branding {
+      width: 90%;
+    }
+    
+    .brand-name {
+      font-size: 36px;
+    }
+  }
+  .error-message {
+    color: #d9534f; /* צבע אדום כהה */
+    background-color: #f2dede; /* רקע אדום בהיר */
+    border: 1px solid #ebccd1; /* גבול אדום כהה */
+    border-radius: 4px; /* פינות מעוגלות */
+    padding: 10px; /* רווח פנימי */
+    margin-top: 10px; /* רווח מעל ההודעה */
+    font-size: 14px; /* גודל טקסט */
+    display: flex; /* אפשרות לסגנון גמיש */
+    align-items: center; /* מרכז את התוכן אנכית */
+}
+
+.error-message::before {
+    content: '⚠️ '; /* הוספת אייקון אזהרה לפני הטקסט */
+    font-size: 16px; /* גודל האייקון */
+}

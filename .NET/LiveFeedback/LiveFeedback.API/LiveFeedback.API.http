@@ -1,0 +1,6 @@
+@LiveFeedback.API_HostAddress = http://localhost:5248
+
+GET {{LiveFeedback.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
