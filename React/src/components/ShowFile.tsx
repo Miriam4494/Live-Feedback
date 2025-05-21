@@ -578,7 +578,7 @@ const ShowFile = ({
   const [brightness, setBrightness] = useState<number>(100)
   const [contrast, setContrast] = useState<number>(100)
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false)
-  const [showImageControls, setShowImageControls] = useState<boolean>(false)
+  // const [showImageControls, setShowImageControls] = useState<boolean>(false)
   const imageRef = useRef<HTMLImageElement>(null)
 
   useEffect(() => {
@@ -642,9 +642,9 @@ const ShowFile = ({
   }
 
   // הוסף פונקציה חדשה לפתיחת תמונות בטאב חדש (כגיבוי)
-  const openInNewTab = () => {
-    window.open(fileURL, "_blank")
-  }
+  // const openInNewTab = () => {
+  //   window.open(fileURL, "_blank")
+  // }
 
   // מחק את פונקציית openImageInNewTab ובמקום זה השתמש בdownloadFile גם לתמונות
 
@@ -702,16 +702,16 @@ const ShowFile = ({
     setRotation((prev) => (prev + 90) % 360)
   }
 
-  const handleRotateCounterClockwise = () => {
-    setRotation((prev) => (prev - 90 + 360) % 360)
-  }
+  // const handleRotateCounterClockwise = () => {
+  //   setRotation((prev) => (prev - 90 + 360) % 360)
+  // }
 
-  const handleResetImage = () => {
-    setZoom(100)
-    setRotation(0)
-    setBrightness(100)
-    setContrast(100)
-  }
+  // const handleResetImage = () => {
+  //   setZoom(100)
+  //   setRotation(0)
+  //   setBrightness(100)
+  //   setContrast(100)
+  // }
 
   const handleFitToScreen = () => {
     if (imageRef.current) {
@@ -732,20 +732,20 @@ const ShowFile = ({
     }
   }
 
-  const toggleFullscreen = () => {
-    if (!document.fullscreenElement) {
-      const container = imageRef.current?.parentElement
-      if (container) {
-        container.requestFullscreen().catch((err) => {
-          console.error(`Error attempting to enable fullscreen: ${err.message}`)
-        })
-        setIsFullscreen(true)
-      }
-    } else {
-      document.exitFullscreen()
-      setIsFullscreen(false)
-    }
-  }
+  // const toggleFullscreen = () => {
+  //   if (!document.fullscreenElement) {
+  //     const container = imageRef.current?.parentElement
+  //     if (container) {
+  //       container.requestFullscreen().catch((err) => {
+  //         console.error(`Error attempting to enable fullscreen: ${err.message}`)
+  //       })
+  //       setIsFullscreen(true)
+  //     }
+  //   } else {
+  //     document.exitFullscreen()
+  //     setIsFullscreen(false)
+  //   }
+  // }
 
   // Listen for fullscreen change events
   useEffect(() => {

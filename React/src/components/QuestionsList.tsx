@@ -956,7 +956,7 @@ const QuestionsList = () => {
   const [openFeedbackId, setOpenFeedbackId] = useState<number | null>(null)
   const [snackbarOpen, setSnackbarOpen] = useState(false)
   const [snackbarMessage, setSnackbarMessage] = useState("")
-  const [selectedImage, setSelectedImage] = useState<{ url: string; name: string } | null>(null)
+  // const [selectedImage, setSelectedImage] = useState<{ url: string; name: string } | null>(null)
   const [usedQuestions, setUsedQuestions] = useState<number[]>([])
   const [sortOption, setSortOption] = useState<"recent" | "popular">("recent")
   const [filterOpen, setFilterOpen] = useState(false)
@@ -972,12 +972,12 @@ const QuestionsList = () => {
   const [showWithSongs, setShowWithSongs] = useState(false)
 
   const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
+  // const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
   const isTablet = useMediaQuery(theme.breakpoints.down("md"))
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"))
 
   const q = useSelector((state: RootState) => state.Questions.questions)
-  const u = useSelector((state: RootState) => state.User.user)
+  // const u = useSelector((state: RootState) => state.User.user)
 
   const dispatch: AppDispatch = useDispatch()
 
@@ -1009,9 +1009,9 @@ const QuestionsList = () => {
     setSnackbarOpen(true)
   }
 
-  const handleSnackbarClose = () => {
-    setSnackbarOpen(false)
-  }
+  // const handleSnackbarClose = () => {
+  //   setSnackbarOpen(false)
+  // }
 
   const handleUseQuestion = (questionId: number) => {
     if (usedQuestions.includes(questionId)) {
