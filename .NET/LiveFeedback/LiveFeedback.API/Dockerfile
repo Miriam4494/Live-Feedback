@@ -13,6 +13,7 @@ COPY ["LiveFeedback.API/LiveFeedback.API.csproj", "LiveFeedback.API/"]
 COPY ["LiveFeedback.Core/LiveFeedback.Core.csproj", "LiveFeedback.Core/"]
 COPY ["LiveFeedback.Data/LiveFeedback.Data.csproj", "LiveFeedback.Data/"]
 COPY ["LiveFeedback.Service/LiveFeedback.Service.csproj", "LiveFeedback.Service/"]
+
 RUN dotnet restore "./LiveFeedback.API/LiveFeedback.API.csproj"
 COPY . .
 WORKDIR "/src/LiveFeedback.API"
