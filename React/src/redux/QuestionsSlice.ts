@@ -129,7 +129,7 @@ const QuestionsSlice = createSlice({
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(updateUseQuestion.fulfilled, (state, action) => {
+            .addCase(updateUseQuestion.fulfilled, (state, /*action*/) => {
                 state.loading = false;
                 // state.questions = action.payload
             })

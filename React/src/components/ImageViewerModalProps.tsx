@@ -56,7 +56,7 @@ const ImageViewerModal = ({
   const [isDragging, setIsDragging] = useState<boolean>(false)
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false)
   const [showControls, setShowControls] = useState<boolean>(true)
-  const [isDownloading, setIsDownloading] = useState<boolean>(false)
+  const [/*isDownloading*/, setIsDownloading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
 
   const imageRef = useRef<HTMLImageElement>(null)

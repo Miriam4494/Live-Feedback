@@ -575,9 +575,9 @@ const ShowFile = ({
   const [isDragging, setIsDragging] = useState(false)
   const [isImageViewerOpen, setIsImageViewerOpen] = useState<boolean>(false)
   const [rotation, setRotation] = useState<number>(0)
-  const [brightness, setBrightness] = useState<number>(100)
-  const [contrast, setContrast] = useState<number>(100)
-  const [isFullscreen, setIsFullscreen] = useState<boolean>(false)
+  const [brightness, /*setBrightness*/] = useState<number>(100)
+  const [contrast, /*setContrast*/] = useState<number>(100)
+  const [/*isFullscreen*/, setIsFullscreen] = useState<boolean>(false)
   // const [showImageControls, setShowImageControls] = useState<boolean>(false)
   const imageRef = useRef<HTMLImageElement>(null)
 
