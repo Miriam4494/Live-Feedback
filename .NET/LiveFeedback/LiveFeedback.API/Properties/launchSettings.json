@@ -1,90 +1,60 @@
-﻿//{
-//  "$schema": "http://json.schemastore.org/launchsettings.json",
-//  "iisSettings": {
-//    "windowsAuthentication": false,
-//    "anonymousAuthentication": true,
-//    "iisExpress": {
-//      "applicationUrl": "http://localhost:22946",
-//      "sslPort": 44305
-//    }
-//  },
-//  "profiles": {
-//    "http": {
-//      "commandName": "Project",
-//      "dotnetRunMessages": true,
-//      "launchBrowser": true,
-//      "launchUrl": "swagger",
-//      "applicationUrl": "http://localhost:5248",
-//      "environmentVariables": {
-//        "ASPNETCORE_ENVIRONMENT": "Development"
-//      }
-//    },
-//    "https": {
-//      "commandName": "Project",
-//      "dotnetRunMessages": true,
-//      "launchBrowser": true,
-//      "launchUrl": "swagger",
-//      "applicationUrl": "https://localhost:7230;http://localhost:5248",
-//      "environmentVariables": {
-//        "ASPNETCORE_ENVIRONMENT": "Development"
-//      }
-//    },
-//    "IIS Express": {
-//      "commandName": "IISExpress",
-//      "launchBrowser": true,
-//      "launchUrl": "swagger",
-//      "environmentVariables": {
-//        "ASPNETCORE_ENVIRONMENT": "Development"
-//      }
-//    }
-//  }
-//}
 {
-    "$schema": "http://json.schemastore.org/launchsettings.json",
-    "iisSettings": {
-        "windowsAuthentication": false,
-        "anonymousAuthentication": true,
-        "iisExpress": {
-            "applicationUrl": "http://localhost:22946",
-            "sslPort": 44305
-        }
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SMTP_SERVER": "smtp.gmail.com",
+        "SMTP_PORT": "587",
+        "GOOGLE_USER_EMAIL": "noreply.livefeedback@gmail.com",
+        "GOOGLE_USER_PASSWORD": "iuyv albj juyd jamt"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5248"
     },
-    "profiles": {
-        "http": {
-            "commandName": "Project",
-            "dotnetRunMessages": true,
-            "launchBrowser": true,
-            "launchUrl": "swagger",
-            "applicationUrl": "http://localhost:5248",
-            "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Development",
-                "SMTP_SERVER": "smtp.gmail.com",
-                "SMTP_PORT": "587",
-                "GOOGLE_USER_EMAIL": "noreply.livefeedback@gmail.com",
-                "GOOGLE_USER_PASSWORD": "iuyv albj juyd jamt"
-            }
-        },
-        "https": {
-            "commandName": "Project",
-            "dotnetRunMessages": true,
-            "launchBrowser": true,
-            "launchUrl": "swagger",
-            "applicationUrl": "https://localhost:7230;http://localhost:5248",
-            "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Development",
-                "SMTP_SERVER": "smtp.gmail.com",
-                "SMTP_PORT": "587",
-                "GOOGLE_USER_EMAIL": "noreply.livefeedback@gmail.com",
-                "GOOGLE_USER_PASSWORD": "iuyv albj juyd jamt"
-            }
-        },
-        "IIS Express": {
-            "commandName": "IISExpress",
-            "launchBrowser": true,
-            "launchUrl": "swagger",
-            "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
-            }
-        }
+    "https": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SMTP_SERVER": "smtp.gmail.com",
+        "SMTP_PORT": "587",
+        "GOOGLE_USER_EMAIL": "noreply.livefeedback@gmail.com",
+        "GOOGLE_USER_PASSWORD": "iuyv albj juyd jamt"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7230;http://localhost:5248"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "environmentVariables": {
+        "ASPNETCORE_HTTPS_PORTS": "8081",
+        "ASPNETCORE_HTTP_PORTS": "8080"
+      },
+      "publishAllPorts": true,
+      "useSSL": true
     }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:22946",
+      "sslPort": 44305
+    }
+  }
 }
