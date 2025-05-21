@@ -845,7 +845,7 @@ const ShowFile = ({
             onMouseMove={handleDragMove}
             onMouseUp={handleDragEnd}
             onMouseLeave={handleDragEnd}
-            onClick={(e) => {
+            onClick={() => {
               // Only open viewer if not dragging
               if (!isDragging) {
                 openImageViewer()

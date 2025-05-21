@@ -739,7 +739,7 @@
 
 "use client"
 
-import { Box, Typography, Grid, Button, Container, Card, CardContent, useTheme } from "@mui/material"
+import { Box, Typography, Grid, Button, Container, Card, CardContent } from "@mui/material"
 import {
   Feedback as FeedbackIcon,
   People as PeopleIcon,
@@ -758,7 +758,7 @@ import { AddIcon, AllIcon, ImageIcon, LogoutIcon, ProfileIcon, QuestionIcon, Thu
 import { FilterIcon, HomeIcon, ListIcon, MusicIcon, SettingsIcon } from "lucide-react"
 
 const Home = () => {
-  const theme = useTheme()
+  // const theme = useTheme()
 
   // New elegant color palette
   const colors = {

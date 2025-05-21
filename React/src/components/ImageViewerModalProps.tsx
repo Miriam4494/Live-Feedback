@@ -47,7 +47,6 @@ const ImageViewerModal = ({
   imageUrl,
   fileName,
   images,
-  currentImageId,
   onNavigate,
 }: ImageViewerModalProps) => {
   const [zoom, setZoom] = useState<number>(100)
@@ -248,9 +247,9 @@ const ImageViewerModal = ({
     }
   }
 
-  const openInNewTab = () => {
-    window.open(imageUrl, "_blank")
-  }
+  // const openInNewTab = () => {
+  //   window.open(imageUrl, "_blank")
+  // }
 
   const hasMultipleImages = images && images.length > 1
 
