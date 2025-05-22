@@ -155,11 +155,11 @@ namespace LiveFeedback.API
             //***************************************
             var app = builder.Build();
             app.UseCors();
-            if (app.Environment.IsDevelopment())
-            {
+            //if (app.Environment.IsDevelopment())
+           // {
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            }
+           // }
             // הפעלת CORS
             //app.UseCors("AllowAllOrigins");
             app.UseCors("AllowAll");
@@ -167,6 +167,7 @@ namespace LiveFeedback.API
             app.UseAuthentication(); // לפני Authorization
             app.UseAuthorization();
             app.MapControllers();
+            app.MapGet("/", () => "API is runing");
             app.Run();
         }
     }
