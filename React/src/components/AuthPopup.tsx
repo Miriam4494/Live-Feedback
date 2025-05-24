@@ -510,7 +510,6 @@ import { useNavigate } from "react-router-dom"
 import { sendEmail } from "../services/Email"
 import type { AppDispatch, RootState } from "../redux/Store"
 import type { LoginUserType, RegisterUserType } from "../types/User"
-
 const AuthPopup = () => {
   // New elegant color palette
   const colors = {
@@ -537,6 +536,7 @@ const AuthPopup = () => {
   const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
   // const theme = useTheme()
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   // Clear errors when switching between login and register
   useEffect(() => {

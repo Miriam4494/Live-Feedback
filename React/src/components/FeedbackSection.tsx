@@ -598,6 +598,7 @@ const FeedbackSection = ({
 
   const dispatch = useDispatch<AppDispatch>()
   const user = useSelector((state: RootState) => state.User.user)
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   // Scroll to bottom when replying
   useEffect(() => {
@@ -640,7 +641,7 @@ ${content}`
       if (AddFeedback.fulfilled.match(resultAction)) {
         setLocalFeedbacks((prev) => [...prev, { ...newFeedbackObject, id: resultAction.payload.id }])
 
-        const response = await axios.get(`https://localhost:7230/api/User/send/${questionUserId}`, {
+        const response = await axios.get(`${apiUrl}User/send/${questionUserId}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
 

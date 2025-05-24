@@ -3,12 +3,13 @@ import axios from "axios";
 import { Question } from "../components/QuestionsList";
 import { RootState } from "./Store";
 import { QuestionState } from "../types/User";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 
 export const getQuestions = createAsyncThunk('Questions/get', async (_, thunkApi) => {
     try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("https://localhost:7230/api/Question",
+        const response = await axios.get(`${apiUrl}Question`,
             { headers: { Authorization: `Bearer ${token}` } }
         );
         console.log(response.data);
@@ -21,7 +22,7 @@ export const getQuestions = createAsyncThunk('Questions/get', async (_, thunkApi
 });
 export const deleteQuestion = createAsyncThunk('Questions/delete', async (questionId: number, thunkApi) => {
     try {
-        const response = await axios.delete(`https://localhost:7230/api/Question/${questionId}`,
+        const response = await axios.delete(`${apiUrl}Question/${questionId}`,
             { headers: { Authorization: `Bearer` + localStorage.getItem("token") } }
         );
         console.log(response.data);
@@ -39,7 +40,7 @@ export const updateQuestion = createAsyncThunk('Questions/put', async (question:
         console.log(question);
         //לטפל בשרת למה חוזר ריק?
 
-        const response = await axios.put(`https://localhost:7230/api/Question/${question.id}`,
+        const response = await axios.put(`${apiUrl}Question/${question.id}`,
             question,
             { headers: { Authorization: `Bearer` + localStorage.getItem("token") } }
         );
@@ -72,7 +73,7 @@ export const updateUseQuestion = createAsyncThunk('Questions/updateUsersUse', as
     try {
         // שליחת בקשת PUT לשרת
         const response = await axios.put(
-            `https://localhost:7230/api/Question/updateUsersUse/${questionId}`,
+            `${apiUrl}Question/updateUsersUse/${questionId}`,
             { headers: { Authorization: `Bearer ${localStorage.getItem("token")}`, }, }
 
         );

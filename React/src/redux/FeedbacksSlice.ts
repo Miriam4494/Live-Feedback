@@ -3,11 +3,12 @@ import axios from "axios";
 import { RootState } from "./Store";
 import { FeedbackState } from "../types/User";
 import { Feedback } from "../components/FeedbackSection";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 
 export const AddFeedback = createAsyncThunk('Feedback/post', async (feedback:Feedback,thunkApi) => {
   try {
-    const response = await axios.post("https://localhost:7230/api/Feedback",
+    const response = await axios.post(`${apiUrl}Feedback`,
        feedback
     );
     console.log(response);
@@ -21,7 +22,7 @@ export const AddFeedback = createAsyncThunk('Feedback/post', async (feedback:Fee
 
 export const GetFeedback = createAsyncThunk('Feedback/get', async (_,thunkApi) => {
   try {
-    const response = await axios.get("https://localhost:7230/api/Feedback",
+    const response = await axios.get(`${apiUrl}Feedback`,
        {
         headers: {
           'Authorization': 'Bearer'+ localStorage.getItem('token')

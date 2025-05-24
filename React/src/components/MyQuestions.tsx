@@ -826,6 +826,7 @@ import { deleteQuestion, getQuestions, updateQuestion } from "../redux/Questions
 import axios from "axios"
 import { motion, AnimatePresence } from "framer-motion"
 import { useTheme } from "@mui/material/styles"
+const apiUrl = import.meta.env.VITE_API_URL;
 
 // New elegant color palette
 const colors = {
@@ -836,7 +837,7 @@ const colors = {
   dark: "#2D3142", // Dark blue-gray
 }
 
-const API_BASE_URL = "https://localhost:7230/api/"
+const API_BASE_URL = `${apiUrl}`
 
 const MyQuestions = () => {
   const currentUser = useSelector((state: RootState) => state.User?.user)

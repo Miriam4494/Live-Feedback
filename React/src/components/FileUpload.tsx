@@ -493,8 +493,9 @@ const colors = {
   accent: "#81B29A", // Sage green
   dark: "#2D3142", // Dark blue-gray
 }
+const apiUrl = import.meta.env.VITE_API_URL;
 
-const API_BASE_URL = "https://localhost:7230/api/"
+const API_BASE_URL = `${apiUrl}`
 
 const allowedTypes = [
   "image/png",

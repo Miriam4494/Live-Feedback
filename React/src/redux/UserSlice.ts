@@ -142,6 +142,7 @@ import { LoginUserType, RegisterUserType, UserState, UserType } from "../types/U
 import axios from "axios";
 import { RootState } from "./Store";
 import { jwtDecode } from "jwt-decode";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 type jwtType = {
   Token: string;
@@ -155,7 +156,7 @@ export const loginAndRegisterUser = createAsyncThunk(
     try {
       const status = "UserName" in user ? "register" : "login";
       const response = await axios.post(
-        `https://live-feedback-lgcr.onrender.com/Auth/${status}`,
+        `${apiUrl}Auth/${status}`,
         user
       );
       return response.data as { user: UserType; token: string };
@@ -171,7 +172,7 @@ export const updateUser = createAsyncThunk(
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        `https://live-feedback-lgcr.onrender.com/user/${user.id}`,
+        `${apiUrl}user/${user.id}`,
         {
           UserName: user.userName,
           Email: user.email,
@@ -212,7 +213,7 @@ export const fetchUserData = createAsyncThunk(
         const userId = getUserIdFromToken(token);
         if (!userId) throw new Error("Invalid token");
         const response = await axios.get(
-          `https://live-feedback-lgcr.onrender.com/User/${userId}`,
+          `${apiUrl}User/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

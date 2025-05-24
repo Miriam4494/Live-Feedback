@@ -580,6 +580,7 @@ const ShowFile = ({
   const [/*isFullscreen*/, setIsFullscreen] = useState<boolean>(false)
   // const [showImageControls, setShowImageControls] = useState<boolean>(false)
   const imageRef = useRef<HTMLImageElement>(null)
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchFileUrl = async () => {
@@ -587,7 +588,7 @@ const ShowFile = ({
         setIsLoading(true)
         setError(null)
 
-        const res = await axios.get(`https://localhost:7230/api/S3/download-url/${fileName}`)
+        const res = await axios.get(`${apiUrl}/S3/download-url/${fileName}`)
 
         setFileURL(res.data.downloadUrl)
 
