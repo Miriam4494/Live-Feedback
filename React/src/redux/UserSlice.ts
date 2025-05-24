@@ -155,7 +155,7 @@ export const loginAndRegisterUser = createAsyncThunk(
     try {
       const status = "UserName" in user ? "register" : "login";
       const response = await axios.post(
-        `https://localhost:7230/api/Auth/${status}`,
+        `https://live-feedback-lgcr.onrender.com/Auth/${status}`,
         user
       );
       return response.data as { user: UserType; token: string };
@@ -171,7 +171,7 @@ export const updateUser = createAsyncThunk(
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        `https://localhost:7230/api/user/${user.id}`,
+        `https://live-feedback-lgcr.onrender.com/user/${user.id}`,
         {
           UserName: user.userName,
           Email: user.email,
@@ -212,7 +212,7 @@ export const fetchUserData = createAsyncThunk(
         const userId = getUserIdFromToken(token);
         if (!userId) throw new Error("Invalid token");
         const response = await axios.get(
-          `https://localhost:7230/api/User/${userId}`,
+          `https://live-feedback-lgcr.onrender.com/User/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
