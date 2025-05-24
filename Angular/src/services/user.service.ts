@@ -7,7 +7,7 @@ import { User } from '../models/user';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private apiUrl = 'https://localhost:7230/api/User';
+  private apiUrl = 'https://live-feedback-lgcr.onrender.com/api/User';
 
   constructor(private http: HttpClient) {}
 
@@ -33,7 +33,7 @@ export class UserService {
   loginAndCheckAdmin(email: string, password: string): Observable<boolean> {
     const body = { email, password };
 
-    return this.http.post<any>(`https://localhost:7230/api/Auth/login`, body).pipe(
+    return this.http.post<any>(`https://live-feedback-lgcr.onrender.com/api/login`, body).pipe(
       map(response => {
         console.log(response);
         

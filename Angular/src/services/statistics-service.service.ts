@@ -6,7 +6,8 @@ import { forkJoin } from 'rxjs';
   providedIn: 'root'
 })
 export class StatisticsService {
-  private apiUrl = 'https://localhost:7230/api';
+
+  private apiUrl = 'https://live-feedback-lgcr.onrender.com/api/';
 
   constructor(private http: HttpClient) {}
 
