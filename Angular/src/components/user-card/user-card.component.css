@@ -1,56 +1,4 @@
-/* 
 
-
-.user-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-}
-
-.user-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
-
-.user-details {
-  text-align: left;
-}
-
-.user-card h3 {
-  margin: 0 0 10px;
-  font-size: 1.4rem;
-  color: #0d1b2a;
-}
-
-.user-card p {
-  margin: 4px 0;
-  font-size: 0.95rem;
-  color: #4a4a4a;
-}
-
-.delete-button {
-  margin-top: 12px;
-  padding: 10px 16px;
-  background-color: #ff4d4f;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  align-self: flex-end;
-  transition: background-color 0.3s ease;
-}
-
-.delete-button:hover {
-  background-color: #ff7875;
-} */
 .user-card {
   background: #ffffff;
   border-radius: 8px;
@@ -117,7 +65,7 @@
   /* color: #333333; */
 }
 .disabled-button {
-  background-color: rgb(237, 231, 231); /* צבע רקע אפור */
-  color: white; /* צבע טקסט לבן */
-  cursor: not-allowed; /* מצביע לא מורשה */
+  background-color: rgb(237, 231, 231);
+  color: white; 
+  cursor: not-allowed; 
 }

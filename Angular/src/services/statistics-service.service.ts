@@ -16,7 +16,6 @@ export class StatisticsService {
       questionCount: this.http.get<any[]>(`${this.apiUrl}Question`),
       imageCount: this.http.get<any[]>(`${this.apiUrl}MyImage`),
       feedbackCount: this.http.get<any[]>(`${this.apiUrl}Feedback`),
-      // userCount: this.http.get<any[]>(`${this.apiUrl}User`)
       userCount: this.http.get<any[]>(`${this.apiUrl}User`, {
         headers: new HttpHeaders({
           'Authorization': `Bearer ${localStorage.getItem('token')}`

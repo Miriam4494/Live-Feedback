@@ -10,11 +10,8 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  // getAllUsers(): Observable<User[]> {
-  //   return this.http.get<User[]>(this.apiUrl);
-  // }
-  getAllUsers(): Observable<User[]> {
-    const token = localStorage.getItem('token'); // קחי את הטוקן מה־localStorage
+    getAllUsers(): Observable<User[]> {
+    const token = localStorage.getItem('token'); 
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -32,10 +29,6 @@ export class UserService {
   updateUser(id: number, user: User): Observable<User> {
     return this.http.put<User>(`${this.apiUrl}/${id}`, user);
   }
-
-  // deleteUser(id: number): Observable<boolean> {
-  //   return this.http.delete<boolean>(`${this.apiUrl}/${id}`);
-  // }
   deleteUser(id: number): Observable<boolean> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({

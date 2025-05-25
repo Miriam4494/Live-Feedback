@@ -2,7 +2,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../../models/user';
 import { NgClass } from '@angular/common';
-// import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-user-card',
@@ -15,6 +14,6 @@ export class UserCardComponent {
   @Output() delete = new EventEmitter<number>();
 
   onDelete(): void {
-    this.delete.emit(this.user.id); // שולח את ה-ID של המשתמש למחיקה
+    this.delete.emit(this.user.id);
   }
 }
