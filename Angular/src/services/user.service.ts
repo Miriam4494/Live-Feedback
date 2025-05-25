@@ -33,7 +33,7 @@ export class UserService {
   loginAndCheckAdmin(email: string, password: string): Observable<boolean> {
     const body = { email, password };
 
-    return this.http.post<any>(`https://live-feedback-lgcr.onrender.com/api/login`, body).pipe(
+    return this.http.post<any>(`https://live-feedback-lgcr.onrender.com/api/Auth/login`, body).pipe(
       map(response => {
         console.log(response);
         
