@@ -33,9 +33,18 @@ export class UserService {
     return this.http.put<User>(`${this.apiUrl}/${id}`, user);
   }
 
+  // deleteUser(id: number): Observable<boolean> {
+  //   return this.http.delete<boolean>(`${this.apiUrl}/${id}`);
+  // }
   deleteUser(id: number): Observable<boolean> {
-    return this.http.delete<boolean>(`${this.apiUrl}/${id}`);
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+  
+    return this.http.delete<boolean>(`${this.apiUrl}/${id}`, { headers });
   }
+  
   loginAndCheckAdmin(email: string, password: string): Observable<boolean> {
     const body = { email, password };
 
