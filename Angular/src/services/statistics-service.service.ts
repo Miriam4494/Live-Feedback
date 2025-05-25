@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
 
 @Injectable({
@@ -16,7 +16,13 @@ export class StatisticsService {
       questionCount: this.http.get<any[]>(`${this.apiUrl}Question`),
       imageCount: this.http.get<any[]>(`${this.apiUrl}MyImage`),
       feedbackCount: this.http.get<any[]>(`${this.apiUrl}Feedback`),
-      userCount: this.http.get<any[]>(`${this.apiUrl}User`)
+      // userCount: this.http.get<any[]>(`${this.apiUrl}User`)
+      userCount: this.http.get<any[]>(`${this.apiUrl}User`, {
+        headers: new HttpHeaders({
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        })
+      })
+      
     });
   }
 }
