@@ -1,9 +1,8 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { User } from '../models/user';
-// import { User } from '../models/user.model';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
@@ -11,10 +10,17 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
+  // getAllUsers(): Observable<User[]> {
+  //   return this.http.get<User[]>(this.apiUrl);
+  // }
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
+    const token = localStorage.getItem('token'); // קחי את הטוקן מה־localStorage
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+  
+    return this.http.get<User[]>(this.apiUrl, { headers });
   }
-
   getUser(id: number): Observable<User> {
     return this.http.get<User>(`${this.apiUrl}/${id}`);
   }
@@ -35,9 +41,9 @@ export class UserService {
 
     return this.http.post<any>(`https://live-feedback-lgcr.onrender.com/api/Auth/login`, body).pipe(
       map(response => {
-        console.log(response);
-        
         if (response?.user?.roleId == 2) {
+          console.log("אני כאן");
+          
           localStorage.setItem('token', response.token);
           return true;
         }

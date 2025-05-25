@@ -25,14 +25,10 @@ export class HomeComponent implements OnInit {
   login(): void {
     this.userService.loginAndCheckAdmin(this.email, this.password).subscribe(isAdmin => {
       if (isAdmin) {
-        console.log("8456");
-        
         this.isLoggedIn = true;
         this.errorMessage = '';
         localStorage.setItem('isLoggedIn', 'true');
       } else {
-        console.log("845656");
-  
         this.isLoggedIn = false;
         this.errorMessage = 'Incorrect password or insufficient permissions.';
       }
