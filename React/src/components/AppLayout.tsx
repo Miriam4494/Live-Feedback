@@ -606,7 +606,7 @@ const AppLayout = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token")
-    if (token||user?.id) {
+    if (token || user?.id) {
       console.log("user is authenticated", user?.id);
       
       setIsAuthenticated(true)
@@ -617,7 +617,7 @@ const AppLayout = () => {
     if (isTablet) {
       setDrawerOpen(false)
     }
-  }, [isTablet])
+  }, [isTablet,user, user?.id])
 
   const handleLogout = () => {
     localStorage.removeItem("token")
