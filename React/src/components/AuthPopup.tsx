@@ -535,8 +535,6 @@ const AuthPopup = () => {
   const { error, loading, user } = useSelector((state: RootState) => state.User)
   const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
-  // const theme = useTheme()
-  // const apiUrl = import.meta.env.VITE_API_URL;
 
   // Clear errors when switching between login and register
   useEffect(() => {

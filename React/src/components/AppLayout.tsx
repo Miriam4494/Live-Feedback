@@ -606,8 +606,9 @@ const AppLayout = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token")
-    if (token) {
+    if (token||user?.id) {
       setIsAuthenticated(true)
+
     }
 
     // Auto-collapse drawer on tablet
