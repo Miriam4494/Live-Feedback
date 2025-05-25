@@ -154,7 +154,7 @@ namespace LiveFeedback.API
             builder.Services.AddSingleton<IAmazonS3>(s3Client);
             //***************************************
             var app = builder.Build();
-            app.UseCors();
+            //app.UseCors();
             //if (app.Environment.IsDevelopment())
            // {
                 app.UseSwagger();
