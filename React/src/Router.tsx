@@ -1,4 +1,4 @@
-import { createHashRouter  } from 'react-router-dom';
+import { createBrowserRouter  } from 'react-router-dom';
 import Home from './components/Home';
 import AppLayout from './components/AppLayout';
 import AuthPopup from './components/AuthPopup';
@@ -8,7 +8,7 @@ import QuestionsList from './components/QuestionsList';
 import { Provider } from 'react-redux';
 import store from './redux/Store';
 import MyQuestions from './components/MyQuestions';
-export const Router = createHashRouter ([
+export const Router = createBrowserRouter ([
   
   {
     path: '/',
