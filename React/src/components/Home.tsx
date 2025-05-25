@@ -951,7 +951,7 @@ const Home = () => {
                   <Typography variant="body1" color={colors.secondary}>
                     Hero Image
                     <HomeIcon style={{ fontSize: 40, color: "#FF6B6B" }} />
-      <QuestionIcon style={{ fontSize: 40, color: "#4ECDC4" }} />
+      {/* <QuestionIcon style={{ fontSize: 40, color: "#4ECDC4" }} />
       <FeedbackIcon style={{ fontSize: 40, color: "#FFD166" }} />
       <ProfileIcon style={{ fontSize: 40, color: "#FF6B6B" }} />
       <ListIcon style={{ fontSize: 40, color: "#FFD166" }} />
@@ -963,7 +963,7 @@ const Home = () => {
       <LogoutIcon style={{ fontSize: 40, color: "#FF6B6B" }} />
       <FilterIcon style={{ fontSize: 40, color: "#4ECDC4" }} />
       <ThumbUpIcon style={{ fontSize: 40, color: "#FF6B6B" }} />
-      <AllIcon style={{ fontSize: 40, color: "#4ECDC4" }} />
+      <AllIcon style={{ fontSize: 40, color: "#4ECDC4" }} /> */}
                   </Typography>
                 </Box>
               </motion.div>
