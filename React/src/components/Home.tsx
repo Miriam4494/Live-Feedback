@@ -754,8 +754,8 @@ import {
 } from "@mui/icons-material"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import { AddIcon, AllIcon, ImageIcon, LogoutIcon, ProfileIcon, QuestionIcon, ThumbUpIcon } from "./icons/TritoneIcons"
-import { FilterIcon, HomeIcon, ListIcon, MusicIcon, SettingsIcon } from "lucide-react"
+// import { AddIcon, AllIcon, ImageIcon, LogoutIcon, ProfileIcon, QuestionIcon, ThumbUpIcon } from "./icons/TritoneIcons"
+import {  HomeIcon } from "lucide-react"
 
 const Home = () => {
   // const theme = useTheme()
