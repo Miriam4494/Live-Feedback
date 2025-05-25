@@ -162,7 +162,7 @@ namespace LiveFeedback.API
            // }
             // הפעלת CORS
             //app.UseCors("AllowAllOrigins");
-            app.UseCors("AllowAll");
+            //app.UseCors("AllowAll");
             app.UseHttpsRedirection();
             app.UseAuthentication(); // לפני Authorization
             app.UseAuthorization();
