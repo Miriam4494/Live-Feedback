@@ -607,6 +607,8 @@ const AppLayout = () => {
   useEffect(() => {
     const token = localStorage.getItem("token")
     if (token||user?.id) {
+      console.log("user is authenticated", user?.id);
+      
       setIsAuthenticated(true)
 
     }
