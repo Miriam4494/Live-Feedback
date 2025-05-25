@@ -51,7 +51,6 @@ export class UserService {
     return this.http.post<any>(`https://live-feedback-lgcr.onrender.com/api/Auth/login`, body).pipe(
       map(response => {
         if (response?.user?.roleId == 2) {
-          console.log("אני כאן");
           
           localStorage.setItem('token', response.token);
           return true;
