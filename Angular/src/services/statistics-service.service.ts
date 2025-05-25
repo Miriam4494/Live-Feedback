@@ -13,10 +13,10 @@ export class StatisticsService {
 
   getStatistics() {
     return forkJoin({
-      questionCount: this.http.get<any[]>(`${this.apiUrl}/Question`),
-      imageCount: this.http.get<any[]>(`${this.apiUrl}/MyImage`),
-      feedbackCount: this.http.get<any[]>(`${this.apiUrl}/Feedback`),
-      userCount: this.http.get<any[]>(`${this.apiUrl}/User`)
+      questionCount: this.http.get<any[]>(`${this.apiUrl}Question`),
+      imageCount: this.http.get<any[]>(`${this.apiUrl}MyImage`),
+      feedbackCount: this.http.get<any[]>(`${this.apiUrl}Feedback`),
+      userCount: this.http.get<any[]>(`${this.apiUrl}User`)
     });
   }
 }
