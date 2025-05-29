@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { LoginUserType, RegisterUserType, UserState, UserType } from "../types/User";
 import axios from "axios";
 import { RootState } from "./Store";
-import { jwtDecode } from "jwt-decode";
+// import { jwtDecode } from "jwt-decode";
 
 
 export const loginAndRegisterUser = createAsyncThunk('user/loginAndRegister',
@@ -42,62 +42,62 @@ export const updateUser = createAsyncThunk('user/update', async (user: UserType,
 });
 
 
-const getUserIdFromToken = (token: string | null) => {
-  if (token) {
-    try {
-      const decoded = jwtDecode<jwtType>(token);
-      return decoded.sub;
-    } catch (error) {
-      console.error("Invalid token", error);
-      return null;
-    }
-  }
-  return null;
-};
+// const getUserIdFromToken = (token: string | null) => {
+//   if (token) {
+//     try {
+//       const decoded = jwtDecode<jwtType>(token);
+//       return decoded.sub;
+//     } catch (error) {
+//       console.error("Invalid token", error);
+//       return null;
+//     }
+//   }
+//   return null;
+// };
 
-const fetchUserData = async ():Promise<UserState> => {
-  const token = localStorage.getItem('token');
-  if (token) {
-    console.log(token);
+// const fetchUserData = async ():Promise<UserState> => {
+//   const token = localStorage.getItem('token');
+//   if (token) {
+//     console.log(token);
     
-    try {
-      const userId = getUserIdFromToken(token);
-      console.log(userId);
+//     try {
+//       const userId = getUserIdFromToken(token);
+//       console.log(userId);
       
-      if (!userId) {
-        console.error("Invalid token");
-      }
-      const response = await axios.get(`https://live-feedback-lgcr.onrender.com/api/User/${userId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      if (response.data) {
-        return {user:response.data, loading: false, error: null};
-      }
+//       if (!userId) {
+//         console.error("Invalid token");
+//       }
+//       const response = await axios.get(`https://live-feedback-lgcr.onrender.com/api/User/${userId}`, {
+//         headers: {
+//           Authorization: `Bearer ${token}`,
+//         },
+//       });
+//       if (response.data) {
+//         return {user:response.data, loading: false, error: null};
+//       }
 
-    } catch (error) {
-      console.error('Error fetching user data:', error);
-    }
-  }
-  return {user:null, loading:false, error:null};
-};
+//     } catch (error) {
+//       console.error('Error fetching user data:', error);
+//     }
+//   }
+//   return {user:null, loading:false, error:null};
+// };
 
-type jwtType = {
-  Token: String,
-  sub: string
-};
+// type jwtType = {
+//   Token: String,
+//   sub: string
+// };
 
-const userSlice = createSlice({
+const  userSlice =  createSlice({
   name: "User",
-  initialState: await fetchUserData(),
+  initialState: {} as UserState,
   reducers: {clearError: (state) => {
     state.error = null;
   },
   clearUser: (state) => {
-    state.user = null; // איפוס המשתמש
-    state.error = null; // איפוס שגיאות
-    state.loading = false; // איפוס מצב הטעינה
+    state.user = null;
+    state.error = null; 
+    state.loading = false;
   },},
   extraReducers(builder) {
     builder
