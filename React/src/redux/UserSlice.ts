@@ -118,8 +118,12 @@ const  userSlice =  createSlice({
         state.error = null;
       })
       .addCase(loginAndRegisterUser.fulfilled, (state, action: PayloadAction<any>) => {
+        console.log(action.payload);
+        
         state.loading = false;
         state.user = { ...action.payload.user }
+        console.log(state.user);
+        
         localStorage.setItem("token", action.payload.token);
         window.location.href = "/all";
 
