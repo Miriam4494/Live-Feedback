@@ -89,7 +89,7 @@ const AppLayout = () => {
     if (isTablet) {
       setDrawerOpen(false)
     }
-  }, [isTablet])
+  }, [isTablet,user?.id])
 
   const handleLogout = () => {
     localStorage.removeItem("token")
