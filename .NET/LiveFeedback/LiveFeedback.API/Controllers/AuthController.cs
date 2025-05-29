@@ -37,12 +37,13 @@ namespace LiveFeedback.API.Controllers
             return Ok(new
             {
                 Token = token,
-                User = new
-                {
-                    user.Id,
-                    user.Email,
-                    user.RoleId
-                }
+                User = userDto
+                //new
+                //{
+                //    user.Id,
+                //    user.Email,
+                //    user.RoleId
+                //}
             });
         }
 

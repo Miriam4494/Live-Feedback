@@ -90,6 +90,7 @@ export const updateUser = createAsyncThunk('user/update', async (user: UserType,
 
 const  userSlice =  createSlice({
   name: "User",
+  // initialState: await fetchUserData(),
   initialState: {} as UserState,
   reducers: {clearError: (state) => {
     state.error = null;
@@ -118,10 +119,11 @@ const  userSlice =  createSlice({
         state.error = null;
       })
       .addCase(loginAndRegisterUser.fulfilled, (state, action: PayloadAction<any>) => {
-        console.log(action.payload);
-        
         state.loading = false;
         state.user = { ...action.payload.user }
+        console.log("in loginAndRegisterUser.fulfilled");
+        console.log(action.payload.user);
+        console.log("state.user");
         console.log(state.user);
         
         localStorage.setItem("token", action.payload.token);
