@@ -127,7 +127,7 @@ const  userSlice =  createSlice({
         console.log(state.user);
         
         localStorage.setItem("token", action.payload.token);
-        window.location.href = "/all";
+        // window.location.href = "/all";
 
       })
       .addCase(loginAndRegisterUser.rejected, (state, action) => {

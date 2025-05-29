@@ -665,6 +665,7 @@ const AuthPopup = () => {
 
     try {
       await dispatch(loginAndRegisterUser(requestData as unknown as LoginUserType | RegisterUserType)).unwrap()
+      navigate("/all")
     } catch (err: any) {
       console.error("Authentication error:", err)
     }
