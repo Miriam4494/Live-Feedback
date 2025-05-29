@@ -588,7 +588,7 @@ const ShowFile = ({
         setIsLoading(true)
         setError(null)
 
-        const res = await axios.get(`${apiUrl}/S3/download-url/${fileName}`)
+        const res = await axios.get(`${apiUrl}S3/download-url/${fileName}`)
 
         setFileURL(res.data.downloadUrl)
 

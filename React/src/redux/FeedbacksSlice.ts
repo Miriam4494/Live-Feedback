@@ -4,6 +4,7 @@ import { RootState } from "./Store";
 import { FeedbackState } from "../types/User";
 import { Feedback } from "../components/FeedbackSection";
 const apiUrl = import.meta.env.VITE_API_URL;
+// const apiUrl = "https://live-feedback-lgcr.onrender.com/api/"
 
 
 export const AddFeedback = createAsyncThunk('Feedback/post', async (feedback:Feedback,thunkApi) => {

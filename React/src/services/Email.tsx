@@ -12,7 +12,7 @@ export const sendEmail = async ({
   isHtml?: boolean;
 }) => {
   try {
-    const response = await axios.post("https://localhost:7230/api/email/send", {
+    const response = await axios.post("https://live-feedback-lgcr.onrender.com/api/email/send", {
       to,
       subject,
       body,

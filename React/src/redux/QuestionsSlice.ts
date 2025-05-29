@@ -4,6 +4,7 @@ import { Question } from "../components/QuestionsList";
 import { RootState } from "./Store";
 import { QuestionState } from "../types/User";
 const apiUrl = import.meta.env.VITE_API_URL;
+// const apiUrl = "https://live-feedback-lgcr.onrender.com/api/"
 
 
 export const getQuestions = createAsyncThunk('Questions/get', async (_, thunkApi) => {
